@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="icontabilidadModelStoreContainer" CdmEntityContainer="icontabilidadEntities">
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="icontabilidadModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="tipoid" ColumnName="tipoid" />
+          <ScalarProperty Name="keyCi" ColumnName="keyCi" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaNac" ColumnName="FechaNac" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Desactivar" ColumnName="Desactivar" />
+          <ScalarProperty Name="Vigenciadesde" ColumnName="Vigenciadesde" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plancuentas">
+      <EntityTypeMapping TypeName="icontabilidadModel.plancuentas">
+        <MappingFragment StoreEntitySet="plancuentas">
+          <ScalarProperty Name="acumdebe" ColumnName="acumdebe" />
+          <ScalarProperty Name="acumsaldo" ColumnName="acumsaldo" />
+          <ScalarProperty Name="acumhaber" ColumnName="acumhaber" />
+          <ScalarProperty Name="acumini" ColumnName="acumini" />
+          <ScalarProperty Name="saldoini" ColumnName="saldoini" />
+          <ScalarProperty Name="haberini" ColumnName="haberini" />
+          <ScalarProperty Name="debeini" ColumnName="debeini" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprob">
+      <EntityTypeMapping TypeName="icontabilidadModel.comprob">
+        <MappingFragment StoreEntitySet="comprob">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="permitcero" ColumnName="permitcero" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

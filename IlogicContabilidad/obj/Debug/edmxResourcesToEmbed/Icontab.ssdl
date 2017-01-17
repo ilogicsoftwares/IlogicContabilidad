@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="icontabilidadModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="comprob">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="permitcero" Type="int" />
+    <Property Name="codigo" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="plancuentas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="tipo" Type="int" />
+    <Property Name="debeini" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="haberini" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="saldoini" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="acumini" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="acumhaber" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="acumsaldo" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="acumdebe" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="idusuario" />
+    </Key>
+    <Property Name="idusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="tipoid" Type="int" Nullable="false" />
+    <Property Name="keyCi" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Cedula" Type="varchar" MaxLength="10" />
+    <Property Name="FechaNac" Type="date" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Desactivar" Type="int" />
+    <Property Name="Vigenciadesde" Type="date" />
+  </EntityType>
+  <EntityContainer Name="icontabilidadModelStoreContainer">
+    <EntitySet Name="comprob" EntityType="Self.comprob" Schema="icontabilidad" store:Type="Tables" />
+    <EntitySet Name="plancuentas" EntityType="Self.plancuentas" Schema="icontabilidad" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="icontabilidad" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

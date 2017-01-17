@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="icontabilidadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="idusuario" />
+    </Key>
+    <Property Name="idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipoid" Type="Int32" Nullable="false" />
+    <Property Name="keyCi" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cedula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNac" Type="DateTime" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Desactivar" Type="Int32" />
+    <Property Name="Vigenciadesde" Type="DateTime" />
+  </EntityType>
+  <EntityContainer Name="icontabilidadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="users" EntityType="Self.users" />
+    <EntitySet Name="plancuentas" EntityType="icontabilidadModel.plancuentas" />
+    <EntitySet Name="comprob" EntityType="icontabilidadModel.comprob" />
+  </EntityContainer>
+  <EntityType Name="plancuentas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="Int32" />
+    <Property Name="debeini" Type="Decimal" />
+    <Property Name="haberini" Type="Decimal" />
+    <Property Name="saldoini" Type="Decimal" />
+    <Property Name="acumini" Type="Decimal" />
+    <Property Name="acumhaber" Type="Decimal" />
+    <Property Name="acumsaldo" Type="Decimal" />
+    <Property Name="acumdebe" Type="Decimal" />
+  </EntityType>
+  <EntityType Name="comprob">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="permitcero" Type="Int32" />
+    <Property Name="codigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

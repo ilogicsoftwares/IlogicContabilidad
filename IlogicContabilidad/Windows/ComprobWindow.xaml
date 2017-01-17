@@ -1,0 +1,16 @@
+﻿<local:MetroToolWindowBase x:Class="IlogicContabilidad.Windows.ComprobWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IlogicContabilidad.Windows"
+        mc:Ignorable="d"
+        Title="ComprobWindow" Height="136.541" Width="445.487">
+    <Grid>
+        <Label x:Name="label" Content="Codigo:" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="128"/>
+        <TextBox x:Name="textBox" Height="23" Margin="128,10,189,0" TextWrapping="Wrap" Text="{Binding codigo}" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Descripción:" Margin="0,41,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="128"/>
+        <TextBox x:Name="textBox_Copy" Height="23" Margin="128,41,10,0" TextWrapping="Wrap" Text="{Binding descripcion}" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox" Content="Permitir Lineas en cero" HorizontalAlignment="Left" Margin="128,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.533,0.056" Width="224" IsChecked="{Binding permitcero}"/>
+    </Grid>
+</local:MetroToolWindowBase>

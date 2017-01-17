@@ -1,0 +1,84 @@
+﻿<local:MetroWindowBase x:Class="IlogicContabilidad.Windows.PrincipalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IlogicContabilidad.Windows"
+        mc:Ignorable="d"
+        Title="Ilogic Softwares - Contabilidad" Height="367.081" Width="564.596">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="273*"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" Height="31" VerticalAlignment="Top">
+            <MenuItem Header="Archivo">
+                <MenuItem Header="Nuevo">
+                    <MenuItem Header="Plan de Cuentas" Click="AbrirForm" Name="CuentaWindow"/>
+                    <MenuItem Header="Tipos de Comprobante" Click="AbrirForm" Name="ComprobWindow"/>
+                </MenuItem>
+
+                <MenuItem Header="Configurar">
+
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Salir" Click="Close"/>
+            </MenuItem>
+            <MenuItem Header="Proceso">
+                <MenuItem Header="Generar Comprobantes" Name="NewCompronWindow" Click="AbrirForm"/>
+            </MenuItem>
+        </Menu>
+        <Grid Height="34" VerticalAlignment="Top" Margin="0,30,0,0">
+            <Button x:Name="CommandGuardar"  HorizontalAlignment="Left" Width="35" Margin="28,0,0,0" Command="{Binding GuardarEntidadCommand}" Style="{DynamicResource MetroCircleButtonStyle}" ToolTip="Guardar(Ctrl+G)" Click="CommandGuardar_Click">
+                <Rectangle Width="15"
+                    Height="15"
+                    Fill="Teal">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                            Visual="{DynamicResource appbar_save}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="CommandNuevo"  Command="{Binding NuevaEntidadCommand}"  HorizontalAlignment="Left" Width="35" Style="{DynamicResource MetroCircleButtonStyle}" ToolTip="Nuevo(Ctrl+N)" Click="CommandNuevo_Click">
+                <Rectangle Width="15"
+                    Height="15"
+                    Fill="Teal">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                            Visual="{DynamicResource appbar_add}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="CommandGuardar_Copy"  HorizontalAlignment="Left" Width="35" Margin="56,0,0,0" Style="{DynamicResource MetroCircleButtonStyle}" ToolTip="Buscar(Ctrl+B)" Click="CommandGuardar_Copy_Click" >
+                <Rectangle Width="15"
+                    Height="15"
+                    Fill="Teal">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                            Visual="{DynamicResource appbar_magnify}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="CommandNuevo_Copy"  Command="{Binding EliminarEntidadCommand}"  HorizontalAlignment="Left" Width="35" Style="{DynamicResource MetroCircleButtonStyle}" ToolTip="Eliminar(Ctrl+N)" Margin="84,0,0,0" RenderTransformOrigin="0.5,0.5" Click="CommandNuevo_Copy_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45.566"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Rectangle Width="15"
+                    Height="15"
+                    Fill="Red">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                            Visual="{DynamicResource appbar_add}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+
+        </Grid>
+
+    </Grid>
+</local:MetroWindowBase>

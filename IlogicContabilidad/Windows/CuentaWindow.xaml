@@ -1,0 +1,52 @@
+﻿<local:MetroToolWindowBase x:Class="IlogicContabilidad.Windows.CuentaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IlogicContabilidad.Windows"
+        xmlns:vm="clr-namespace:IlogicContabilidad.ViewModels"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Plan de Cuentas" Height="306" Width="666.1">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <vm:RadioBoolToIntConverter x:Key="radioBoolToIntConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="354*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="6" Fill="#FFF4F4F5" Height="33" Margin="29,118,-9,0" Stroke="Black" VerticalAlignment="Top"/>
+
+        <Label x:Name="label" Content="Código:" Margin="0,20,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26"/>
+        <xctk:MaskedTextBox x:Name="codigo" Mask="0.0.0.00.000"  Grid.Column="1" Height="26" Margin="0,20,0,0" TextWrapping="Wrap" Text="{Binding codigo, BindsDirectlyToSource=True}" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Descripción:" Margin="0,51,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26"/>
+        <TextBox x:Name="descripcion" Grid.Column="1" Height="26" Margin="0,51,0,0" TextWrapping="Wrap" Text="{Binding descripcion}" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+        <Label x:Name="label_Copy1" Content="Opciones" Margin="10,82,1,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="26" FontWeight="Bold" Grid.ColumnSpan="5" Background="#FF00C0FF"/>
+        <RadioButton x:Name="radioButton" Content="Cta. de Balance" Grid.Column="1" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top"  IsChecked="{Binding tipo, ConverterParameter=1, Converter={StaticResource radioBoolToIntConverter}, UpdateSourceTrigger=Default}"/>
+        <RadioButton x:Name="radioButton_Copy" Content="Cta. de Edo. Resultado" Grid.Column="1" HorizontalAlignment="Left" Margin="150,119,0,0" VerticalAlignment="Top" IsChecked="{Binding tipo, ConverterParameter=2, Converter={StaticResource radioBoolToIntConverter}, UpdateSourceTrigger=Default}"/>
+        <Label x:Name="label_Copy2" Content="Resumen" Margin="10,151,1,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="26" FontWeight="Bold" Grid.ColumnSpan="5" Background="#FF00C0FF"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="5" Height="89" Margin="10,180,1,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="Saldo Anterior" Margin="33,182,235,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Label x:Name="label_Copy5" Content="Debe" Margin="187,182,129,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Label x:Name="label_Copy6" Content="Haber" Margin="305,182,7,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Label x:Name="label_Copy7" Content="Saldo" Margin="39,182,47,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.Column="4" HorizontalAlignment="Center" Width="44"/>
+        <TextBox x:Name="codigo_Copy1" Grid.Column="1" Height="26" Margin="17,237,223,0" TextWrapping="Wrap" Text="{Binding acumini, BindsDirectlyToSource=True}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy" Grid.Column="1" Height="26" Margin="150,237,90,0" TextWrapping="Wrap" Text="{Binding acumdebe, BindsDirectlyToSource=True}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy2" Grid.Column="1" Height="26" Margin="269,237,54,0" TextWrapping="Wrap" Text="{Binding acumhaber, BindsDirectlyToSource=True}" VerticalAlignment="Top" Grid.ColumnSpan="3" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy3" Grid.Column="4" Height="26" Margin="0,237,10,0" TextWrapping="Wrap" Text="{Binding acumsaldo, BindsDirectlyToSource=True}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy5" Grid.Column="1" Height="26" Margin="150,208,90,0" TextWrapping="Wrap" Text="{Binding debeini, BindsDirectlyToSource=True}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy6" Grid.Column="1" Height="26" Margin="269,208,54,0" TextWrapping="Wrap" Text="{Binding haberini, BindsDirectlyToSource=True}" VerticalAlignment="Top" Grid.ColumnSpan="3" IsReadOnly="True"/>
+        <TextBox x:Name="codigo_Copy7" Grid.Column="4" Height="26" Margin="0,208,10,0" TextWrapping="Wrap" Text="{Binding saldoini, BindsDirectlyToSource=True}" VerticalAlignment="Top" IsReadOnly="True"/>
+        <Label x:Name="label_Copy8" Content="Monto Inicial" Margin="10,208,344,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy4" Content="Saldos" Margin="10,234,344,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="26" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</local:MetroToolWindowBase>
